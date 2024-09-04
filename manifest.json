@@ -1,7 +1,7 @@
 
 {
   "manifest_version": 3,
-  "name": "Twitter Follower Counter",
+  "name": "twitter_reputation-checker",
   "version": "1.0",
   "permissions": [
     "activeTab",
