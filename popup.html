@@ -5,32 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twitter Follower Counter</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
-            padding: 10px;
-            width: 300px; /* 确保弹出窗口的宽度合适 */
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #6e45e2, #88d3ce);
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        button {
-            margin-top: 10px;
-            padding: 5px 10px;
-            font-size: 14px;
-            cursor: pointer;
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            max-width: 100%;
+            transition: all 0.3s ease;
+            /* Adjusted to reduce the top margin */
+            margin-top: 0; /* Remove extra margin at the top */
         }
+
+        .title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #ffffff;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            /* Adjusted to reduce the top margin */
+            margin-top: 0; /* Remove extra margin at the top */
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            color: #f3f3f3;
+        }
+
+        .user-mass {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
         p {
-            margin: 5px 0;
+            font-size: 0.9rem;
+            margin: 8px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #e74c3c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #loadFollowers {
+            background-color: #1abc9c;
+        }
+
+        #loadFollowers:hover {
+            background-color: #16a085;
+        }
+
+        p span {
+            color: #ffecb3;
+            font-weight: 600;
+        }
+
+        @media (max-width: 420px) {
+            .container {
+                width: 250px;
+                padding: 15px;
+            }
+            .title {
+                font-size: 1.3em;
+            }
+            button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Twitter UserMass</h1>
-    <p id="currentUrl">当前网址: 未提供</p> <!-- 添加当前网页地址显示 -->
-    <p id="followerCount">点击按钮加载关注者数量</p>
-    <p id="followingStatus">正在关注: 未提供</p>
-    <p id="creationTime">创建时间: 未提供</p>
-    <p id="daysSinceCreation">距离创建时间: 未计算</p>
-    <p id="verifiedStatus">认证状态: 未提供</p>
-    <p id="userMass">信誉值: 未提供</p> <!-- 添加信誉值显示 -->
-    <button id="loadFollowers">查看用户质量</button>
+    <div class="container">
+        <h1 class="title">Twitter User Mass</h1>
+        <div class="content">
+            <p id="currentUrl">当前网址: <span>未提供</span></p>
+            <p id="followerCount">关注者数量: <span>点击按钮加载</span></p>
+            <p id="followingStatus">正在关注: <span>未提供</span></p>
+            <p id="creationTime">创建时间: <span>未提供</span></p>
+            <p id="daysSinceCreation">距离创建时间: <span>未计算</span></p>
+            <p id="verifiedStatus">认证状态: <span>未提供</span></p>
+        </div>
+        <button id="loadFollowers">查看用户质量</button>
+        <div class="user-mass">
+            <p id="userMass">信誉值: <span>未提供</span></p>
+        </div>
+    </div>
     <script src="popup.js"></script>
 </body>
 </html>

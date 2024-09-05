@@ -1,4 +1,3 @@
-
 {
   "manifest_version": 3,
   "name": "twitter_reputation-checker",
@@ -18,6 +17,10 @@
   ],
   "action": {
     "default_popup": "popup.html",
-   "default_icon": "icon.png"
+    "default_icon": {
+      "16": "images/icon.png",
+      "48": "images/icon.png",
+      "128": "images/icon.png"
+    }
   }
 }
