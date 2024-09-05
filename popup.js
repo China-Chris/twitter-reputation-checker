@@ -60,7 +60,7 @@ function getFollowerDetails() {
     
     if (spanElementsFollowing.length >= 2) {
       // 获取第一个 <span> 元素的内容（关注者数量）
-      followersCount = spanElementsFollowing[0].textContent.trim();
+      followingCount = spanElementsFollowing[0].textContent.trim();
     }
   }
   
@@ -70,7 +70,7 @@ function getFollowerDetails() {
     
     if (spanElementsVerifiedFollowers.length >= 1) {
       // 获取第一个 <span> 元素的内容（正在关注数量）
-      followingCount = spanElementsVerifiedFollowers[0].textContent.trim();
+      followersCount = spanElementsVerifiedFollowers[0].textContent.trim();
     }
   }
   
@@ -130,8 +130,8 @@ function getFollowerDetails() {
 
   //计算friendsToFollowersRatio== (1.0 + numFollowings) / (1.0 + numFollowers)followersCount
   // 计算 friendsToFollowersRatio == (1.0 + numFollowings) / (1.0 + numFollowers)
-  let numFollowers = parseInt(followingCount.replace(/,/g, '')); // 去除千位分隔符并转换为数字
   let numFollowings = parseInt(followersCount.replace(/,/g, '')); // 去除千位分隔符并转换为数字
+  let numFollowers = parseInt(followingCount.replace(/,/g, '')); // 去除千位分隔符并转换为数字
 
   // 处理可能的 NaN 值
   if (isNaN(numFollowers)) {
@@ -165,7 +165,7 @@ function getFollowerDetails() {
   chrome.runtime.sendMessage({
     type: 'followersCountUpdated',
     followersCount,
-    followingCount,
+    followingCount, 
     creationTime,
     daysSinceCreation,
     isVerified,
