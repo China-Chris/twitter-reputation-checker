@@ -141,7 +141,9 @@ function getFollowerDetails() {
     numFollowings = 0;
   }
 
-  const friendsToFollowersRatio = ((1.0 + numFollowings) / (1.0 + numFollowers)).toFixed(4); // 保留4位小数
+  const friendsToFollowersRatio = ((1.0 + numFollowers) / (1.0 + numFollowings)).toFixed(4); // 保留4位小数
+  console.log('numFollowers:', numFollowers);
+  console.log('numFollowings:', numFollowings);
   console.log('friendsToFollowersRatio:', friendsToFollowersRatio);
 
   // 计算初始的信誉值
